@@ -1,0 +1,136 @@
+.body11 {
+    font-family: Luckiest Guy, Arial, sans-serif;
+    background-image: url('../../../assets/puzzles/fondo.jpeg');
+    background-size: cover;         /* Asegura que el fondo cubra toda la pantalla */
+    background-position: center;    /* Centra el fondo en la pantalla */
+    background-repeat: no-repeat;   /* Evita que el fondo se repita */
+    width: 100vw;                   /* Asegura que el ancho ocupe toda la ventana */
+    min-height: 100vh;               /* Asegura que la altura cubra al menos toda la ventana */
+    margin: 0;                      /* Elimina márgenes */
+    padding: 0;                     /* Elimina padding */
+    display: flex;                  /* Utiliza flexbox para centrar el contenido */
+    flex-direction: column;         /* Organiza los elementos en una columna */
+    align-items: center;            /* Centra horizontalmente */
+    justify-content: center;        /* Centra verticalmente */
+    color: black;                   /* Establece el color del texto */
+    overflow: hidden;               /* Asegura que no haya desbordamiento */
+}
+
+@media (max-width: 1200px) {
+    .body11 {
+        background-position: top center; /* Asegura que el fondo se enfoque en la parte superior en pantallas más pequeñas */
+    }
+}
+
+
+
+.moving-image {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 200px;
+    animation: rotate 2s ease-in-out infinite alternate;
+}
+
+@keyframes rotate {
+    0% {
+        transform: translateY(-50%) rotate(-2deg);
+    }
+    100% {
+        transform: translateY(-50%) rotate(2deg);
+    }
+}
+
+.Menu {
+    margin: 24px;
+}
+
+.SelectPuzzle {
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px;
+    margin: auto;
+}
+
+@media (max-width: 600px) {
+    .gamearea {
+        width: 40px; /* Asegura que el fondo se enfoque en la parte superior en pantallas más pequeñas */
+    }
+}
+
+.SelectPuzzle div {
+    transition: transform 0.3s ease-in-out;
+}
+
+.SelectPuzzle div:hover {
+    transform: rotate(5deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.SelectPuzzle div:hover::after {
+    transform: rotate(0deg);
+}
+
+.SelectDifficulty {
+    margin: 24px;
+    padding: 8px 12px;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #279fbd;
+    border: 2px solid #000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(16, 16, 219, 0.3);
+    outline: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.SelectDifficulty:hover {
+    background-color: #1fb7cb;
+}
+
+.SelectDifficulty:focus {
+    background-color: #25e2fb;
+}
+
+.PuzzlePreview {
+    background: lightgray center;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    border: solid 2px #000;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.content12 {
+    width: 100vw;                   /* Asegura que el ancho ocupe toda la ventana */
+    min-height: 100vh;  
+}
+
+@media (max-width: 600px) {
+    .content12 {
+        width: 100vw;                   /* Asegura que el ancho ocupe toda la ventana */
+        min-height: 100vh;               /* Asegura que la altura cubra al menos toda la ventana */
+    }
+    
+    .PuzzlePreview {
+        width: 100px;
+        height: 100px;
+        display: flex;                  /* Hacer que .PuzzlePreview sea un contenedor flexible */
+        align-items: center;            /* Centra verticalmente el contenido */
+        justify-content: center;        /* Centra horizontalmente el contenido */
+        margin: auto;              /* Centra .PuzzlePreview dentro de su contenedor */
+    }
+}
+
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 1200px) {
+    .moving-image {
+        display: none; /* Desaparece la imagen cuando el ancho es menor a 1200px */
+    }
+}

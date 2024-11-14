@@ -1,0 +1,29 @@
+.Play {
+    margin: 24px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.button {
+    margin: 24px;
+    padding: 8px 12px;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #279fbd;
+    border: 2px solid #000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(16, 16, 219, 0.3);
+    outline: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #1fb7cb; /* Azul más oscuro al pasar el ratón */
+}
+
+.button:focus {
+    background-color: #25e2fb; /* Azul aún más oscuro al hacer clic */
+}
